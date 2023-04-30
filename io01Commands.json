@@ -4,7 +4,7 @@
     {
         "type": "run",
         "desc": "Show kadabra commands help", 
-        "cmd": "Ver 1.0.18.1"
+        "cmd": "echo 1.0.18.1"
     },
 
     "io01_update": 

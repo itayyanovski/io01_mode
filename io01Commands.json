@@ -4,7 +4,14 @@
     {
         "type": "run",
         "desc": "Show kadabra commands help", 
-        "cmd": "echo 1.0.18.3"
+        "cmd": "echo NimrodGibori"
+    },
+
+    "io01_update": 
+    {
+        "type": "run",
+        "desc": "Show kadabra commands help", 
+        "cmd": "sh ./io01_update.sh"
     },
 
     "kadabra_help": 

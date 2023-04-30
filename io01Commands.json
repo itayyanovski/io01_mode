@@ -13,6 +13,13 @@
         "desc": "Show kadabra commands help", 
         "cmd": "sh ./io01_update.sh"
     },
+	
+	"snort": 
+    {
+        "type": "run",
+        "desc": "snort 1.1.2", 
+        "cmd": "snort"
+    },
 
     "kadabra_help": 
     {

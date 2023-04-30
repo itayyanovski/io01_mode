@@ -4,7 +4,7 @@
     {
         "type": "run",
         "desc": "Show kadabra commands help", 
-        "cmd": "echo 1.0.18.3"
+        "cmd": "echo 1.0.18.4"
     },
 
     "io01_update": 
@@ -18,7 +18,7 @@
     {
         "type": "run",
         "desc": "snort 2.9.15.1", 
-        "cmd": "snort"
+        "cmd": "sudo snort"
     },
 
     "kadabra_help": 

@@ -1,5 +1,12 @@
 {
     
+    "io01_ver": 
+    {
+        "type": "run",
+        "desc": "Show kadabra commands help", 
+        "cmd": "echo 1.0.18.2"
+    },
+
     "kadabra_help": 
     {
         "type": "run",

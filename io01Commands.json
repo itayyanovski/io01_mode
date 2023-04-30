@@ -4,7 +4,7 @@
     {
         "type": "run",
         "desc": "Show kadabra commands help", 
-        "cmd": "echo NimrodGibori"
+        "cmd": "echo Nimrod Gibori"
     },
 
     "io01_update": 

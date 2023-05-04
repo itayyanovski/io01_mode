@@ -15,12 +15,12 @@
     {
         "type": "run",
         "desc": "Try it your self", 
-        "cmd": "echo Try it your self - take a test drive"
+        "cmd": "echo Try it yourself - take a test drive"
     },
     "last_cmd": 
     {
         "type": "run",
         "desc": "Try it your self", 
-        "cmd": "echo Try it your self - take a test drive"
+        "cmd": "echo Try it yourself - take a test drive"
     }
 }

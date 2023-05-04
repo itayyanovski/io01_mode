@@ -14,13 +14,13 @@
     "test_cmd": 
     {
         "type": "run",
-        "desc": "Try it your self", 
+        "desc": "Try it yourself", 
         "cmd": "echo Try it yourself - take a test drive"
     },
     "last_cmd": 
     {
         "type": "run",
-        "desc": "Try it your self", 
+        "desc": "Try it yourself", 
         "cmd": "echo Try it yourself - take a test drive"
     }
 }

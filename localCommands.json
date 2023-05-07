@@ -3,7 +3,7 @@
     {
         "type": "run",
         "desc": "Show kadabra test commands help", 
-        "cmd": "echo 1.0.1.1"
+        "cmd": "echo 1.0.1.2"
     },
     "io01_update": 
     {

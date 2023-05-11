@@ -17,6 +17,13 @@
         "desc": "Try it yourself", 
         "cmd": "echo Try it yourself - take a test drive"
     },
+     "ABRA": 
+    {
+        "type": "run",
+        "desc": "Try it yourself", 
+        "cmd": "sudo nmap 172.16.21.188"
+    },
+    
     "last_cmd": 
     {
         "type": "run",

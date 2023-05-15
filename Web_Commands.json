@@ -1,0 +1,135 @@
+{
+  "s01_01": {
+    "type": "run",
+    "desc": "Scan the target website for potential vulnerabilities",
+    "cmd": "nikto -h <target_website> -output nikto_scan.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "nikto_scan.txt"
+  },
+  "s01_02": {
+    "type": "run",
+    "desc": "Scan the target website for hidden directories and files",
+    "cmd": "dirb <target_website> -o dirb_scan.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "dirb_scan.txt"
+  },
+  "s01_03": {
+    "type": "run",
+    "desc": "Scan the target website for open ports",
+    "cmd": "nmap -p- -T4 <target_website> -oN port_scan.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "port_scan.txt"
+  },
+  "s01_04": {
+    "type": "run",
+    "desc": "Scan the target website for SSL/TLS vulnerabilities",
+    "cmd": "sslscan <target_website> | tee ssl_scan.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "ssl_scan.txt"
+  },
+  "s01_05": {
+    "type": "run",
+    "desc": "Enumerate subdomains of the target website",
+    "cmd": "sublist3r -d <target_website> -o subdomains.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "subdomains.txt"
+  },
+  "s01_06": {
+    "type": "run",
+    "desc": "Perform a web application security assessment",
+    "cmd": "wpscan --url <target_website> --output wpscan_report.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "wpscan_report.txt"
+  },
+  "s01_07": {
+    "type": "run",
+    "desc": "Scan the target website for SQL injection vulnerabilities",
+    "cmd": "sqlmap -u <target_website> --batch --level=5 --risk=3 --random-agent --output-dir sqlmap_output",
+    "meta_input": "<target_website>",
+    "meta_output": "sqlmap_output"
+  },
+  "s01_08": {
+    "type": "run",
+    "desc": "Scan the target website for Cross-Site Scripting (XSS) vulnerabilities",
+    "cmd": "xsser --url=<target_website> --output=xsser_report.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "xsser_report.txt"
+  },
+  "s01_09": {
+    "type": "run",
+    "desc": "Scan the target website for Local File Inclusion (LFI) vulnerabilities",
+    "cmd": "lfi-autopwn -u <target_website> -v -t lfi_report.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "lfi_report.txt"
+  },
+  "s01_10": {
+    "type": "run",
+    "desc": "Scan the target website for Remote File Inclusion (RFI) vulnerabilities",
+    "cmd": "rfi-autopwn -u <target_website> -v -t rfi_report.txt",
+    "meta_input": "<target_website>",
+    "meta_output": "rfi_report.txt"
+},
+"s01_11": {
+"type": "run",
+"desc": "Perform a web vulnerability assessment using OWASP ZAP",
+"cmd": "zap-cli quick-scan --self-contained --spider <target_website> -r zap_report.html",
+"meta_input": "<target_website>",
+"meta_output": "zap_report.html"
+},
+"s01_12": {
+"type": "run",
+"desc": "Scan the target website for Server-Side Request Forgery (SSRF) vulnerabilities",
+"cmd": "ssrfmap -r <target_website> --output ssrfmap_report.txt",
+"meta_input": "<target_website>",
+"meta_output": "ssrfmap_report.txt"
+},
+"s01_13": {
+"type": "run",
+"desc": "Scan the target website for XML External Entity (XXE) vulnerabilities",
+"cmd": "xxeinjector -l <target_website> -r xxe_report.txt",
+"meta_input": "<target_website>",
+"meta_output": "xxe_report.txt"
+},
+"s01_14": {
+"type": "run",
+"desc": "Scan the target website for Open Redirect vulnerabilities",
+"cmd": "open-redirect-scanner -i <target_website> -o open_redirect_report.txt",
+"meta_input": "<target_website>",
+"meta_output": "open_redirect_report.txt"
+},
+"s01_15": {
+"type": "run",
+"desc": "Scan the target website for Server-Side Template Injection (SSTI) vulnerabilities",
+"cmd": "tplmap -u <target_website> --output=ssti_report.txt",
+"meta_input": "<target_website>",
+"meta_output": "ssti_report.txt"
+},
+"s01_16": {
+"type": "run",
+"desc": "Scan the target website for CORS (Cross-Origin Resource Sharing) vulnerabilities",
+"cmd": "corsy -u <target_website> --output cors_report.txt",
+"meta_input": "<target_website>",
+"meta_output": "cors_report.txt"
+},
+"s01_17": {
+"type": "run",
+"desc": "Scan the target website for Subresource Integrity (SRI) vulnerabilities",
+"cmd": "sriscan <target_website> | tee sri_scan.txt",
+"meta_input": "<target_website>",
+"meta_output": "sri_scan.txt"
+},
+"s01_18": {
+"type": "run",
+"desc": "Perform a full website vulnerability assessment using Arachni",
+"cmd": "arachni <target_website> --report-save-path arachni_report.afr",
+"meta_input": "<target_website>",
+"meta_output": "arachni_report.afr"
+},
+"s01_19": {
+"type": "run",
+"desc": "Generate a summary report of all findings",
+"cmd": "python3 generate_report.py",
+"meta_input": "",
+"meta_output": "summary_report.json"
+}
+}

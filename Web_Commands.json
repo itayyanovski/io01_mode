@@ -28,7 +28,7 @@
     "s03": {
     "type": "interactive",
     "desc": "Use MSF to crawl the websute INPUT:[target_website]",
-    "cmd": "sudo ./third_party/crawl_website.sh"
+    "cmd": "./third_party/crawl_website.sh"
     },
 
     "s04": {

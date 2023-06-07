@@ -1,0 +1,65 @@
+{
+    "io01_ver": 
+    {
+        "type": "run",
+        "desc": "Show kadabra commands help", 
+        "cmd": "echo 1.0.18.8"
+    },
+
+    "io01_update": 
+    {
+        "type": "run",
+        "desc": "Update  kadabra", 
+        "cmd": "sh ./io01_update.sh"
+    },
+    
+    "s01": {
+    "type": "run",
+    "desc": "Scan the target network for open ports (aggresive mode) INPUT:[target_netblock]",
+    "cmd": "nmap -p 80,443,8080, -T4"
+    },
+  
+    "s02": {
+        "type": "run",
+        "desc": "Scan the target website for potential vulnerabilities INPUT:[target_website]",
+        "cmd": "nikto -h"
+        },
+    
+    "s03": {
+    "type": "interactive",
+    "desc": "Use MSF to crawl the websute INPUT:[target_website]",
+    "cmd": "sudo ./third_party/crawl_website.sh"
+    },
+
+    "s04": {
+    "type": "run",
+    "desc": "Scan the target website for hidden directories and files INPUT:[target_website]",
+    "cmd": "dirb"
+    },
+
+    "s05": {
+    "type": "run",
+    "desc": "Scan the target website for SSL/TLS vulnerabilities INPUT:[target_website]",
+    "cmd": "sslscan "
+    },
+    "s06": {
+    "type": "run",
+    "desc": "Enumerate subdomains of the target website [target_Domain]",
+    "cmd": "sublist3r -d "
+    },
+    "s07": {
+    "type": "run",
+    "desc": "Perform a Wordpress site security assessment INPUT:[target_url]",
+    "cmd": "wpscan --url <target_website> --output wpscan_report.txt"
+    },
+    "s08": {
+    "type": "run",
+    "desc": "Scan the target website for SQL injection vulnerabilities INPUT:[target_website]",
+    "cmd": "sqlmap --batch --level=5 --risk=3 --random-agent -u "
+    },
+    "s09": {
+    "type": "run",
+    "desc": "Scan the target website for Cross-Site Scripting (XSS) vulnerabilities INPUT:[target_url]",
+    "cmd": "xsser --url="
+  }
+}

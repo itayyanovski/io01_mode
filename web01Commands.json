@@ -50,7 +50,7 @@
     "s07": {
     "type": "run",
     "desc": "Perform a Wordpress site security assessment INPUT:[target_url]",
-    "cmd": "wpscan --url <target_website> --output wpscan_report.txt"
+    "cmd": "wpscan --url="
     },
     "s08": {
     "type": "run",

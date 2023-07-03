@@ -57,6 +57,11 @@
     "desc": "Scan the target website for SQL injection vulnerabilities INPUT:[target_website]",
     "cmd": "sqlmap --batch --level=5 --risk=3 --random-agent -u "
     },
+     "Gibor": {
+    "type": "run",
+    "desc": "Scan the target website for SQL injection vulnerabilities INPUT:[target_website]",
+    "cmd": "tcpreplay -h "
+    },
     "s09": {
     "type": "run",
     "desc": "Scan the target website for Cross-Site Scripting (XSS) vulnerabilities INPUT:[target_url]",

@@ -48,7 +48,7 @@
     "cmd": "sublist3r -d "
     },
     "s07": {
-    "type": "run",
+    "type": "interactive",
     "desc": "Perform a Wordpress site security assessment INPUT:[target_url]",
     "cmd": "wpscan --url="
     },

@@ -72,7 +72,7 @@
     "c": {
         "type": "interactive",
         "desc": "TLV weather",
-        "cmd": "curl "http://wtr.in/tlv?0"
+        "cmd": "\"curl http://wtr.in/tlv?0\""
     },
 
     "sqlmap": {

@@ -1,70 +1,84 @@
 {
-    "io01_ver": 
-    {
+    "io01_ver": {
         "type": "run",
         "desc": "Show kadabra commands help", 
-        "cmd": "echo 1.0.18.8"
+        "cmd": "echo OPWIN23"
     },
 
-    "io01_update": 
-    {
+    "io01_update": {
         "type": "run",
         "desc": "Update  kadabra", 
         "cmd": "sh ./io01_update.sh"
     },
-    
-    "s01": {
-    "type": "run",
-    "desc": "Scan the target network for open ports (aggresive mode) INPUT:[target_netblock]",
-    "cmd": "nmap -p 80,443,8080, -T4"
+
+    "sysinfo": 
+    {
+        "type": "run",
+        "desc": "discover.T0846.001: TCP SysInfo Discovery--> tcp_fingerprint <target_ip>", 
+        "cmd": "sudo nmap -O -v"
     },
-  
-    "s02": {
+
+    
+    "nikto": {
         "type": "run",
         "desc": "Scan the target website for potential vulnerabilities INPUT:[target_website]",
         "cmd": "nikto -h"
-        },
+    },
     
-    "s03": {
-    "type": "interactive",
-    "desc": "Use MSF to crawl the websute INPUT:[target_website]",
-    "cmd": "sudo ./third_party/crawl_website.sh"
+    "MSFscan": {
+        "type": "interactive",
+        "desc": "Use MSF to crawl the websute INPUT:[target_website]",
+        "cmd": "sudo sh ./third_party/crawl_website.sh"
     },
 
-    "s04": {
-    "type": "run",
-    "desc": "Scan the target website for hidden directories and files INPUT:[target_website]",
-    "cmd": "dirb"
+   "xsstrike": {
+        "type": "run",
+        "desc": "Scan the target website for XSS:[target_website]",
+        "cmd": "python3 ./downloads/XSStrike/xsstrike.py -u"
     },
 
-    "s05": {
-    "type": "run",
-    "desc": "Scan the target website for SSL/TLS vulnerabilities INPUT:[target_website]",
-    "cmd": "sslscan "
+ "drupwn": {
+        "type": "run",
+        "desc": "Scan Drupal website for Drupal exploits:[target_website]",
+        "cmd": "python3 ./downloads/drupwn/drupwn --mode enum --target"
     },
-    "s06": {
-    "type": "run",
-    "desc": "Enumerate subdomains of the target website [target_Domain]",
-    "cmd": "sublist3r -d "
+
+
+    "dirb": {
+        "type": "run",
+        "desc": "Scan the target website for hidden directories and files INPUT:[target_website]",
+        "cmd": "dirb"
     },
-    "s07": {
-    "type": "interactive",
-    "desc": "Perform a Wordpress site security assessment INPUT:[target_url]",
-    "cmd": "wpscan --url="
+
+    
+    "wpscan": {
+        "type": "run",
+        "desc": "Perform a Wordpress site security assessment INPUT:[target_url]",
+        "cmd": "wpscan --no-update --random-user-agent --api-token 9veCnFHY0OqidgUeH6AohYr1w2tHR4swS1bnz2s5zmw --url"
     },
-    "s08": {
-    "type": "run",
-    "desc": "Scan the target website for SQL injection vulnerabilities INPUT:[target_website]",
-    "cmd": "sqlmap --batch --level=5 --risk=3 --random-agent -u "
+
+    "proxy-dump": {
+        "type": "interactive",
+        "desc": "set mitmproxy | port 8082",
+        "cmd": " ./downloads/mitmdump --mode regular@8082  --set block_global=false"
     },
-     "TCPreply": {
-    "type": "run",
-    "desc": "Scan the target website for SQL injection vulnerabilities INPUT:[target_website]",
-    "cmd": "tcpreplay -h "
+
+    "proxy": {
+        "type": "interactive",
+        "desc": "set mitmproxy | port 8092",
+        "cmd": " ./downloads/mitmproxy --mode regular@8092  --set block_global=false"
     },
-    "s09": {
-    "type": "run",
-    "desc": "Scan the target website for Cross-Site Scripting (XSS) vulnerabilities INPUT:[target_url]",
-    "cmd": "xsser --url="
-  }
+
+    "c": {
+        "type": "interactive",
+        "desc": "TLV weather",
+        "cmd": "curl "http://wtr.in/tlv?0"
+    },
+
+    "sqlmap": {
+        "type": "interactive",
+        "desc": "Scan the target website for SQL injection vulnerabilities INPUT:[target_website]",
+        "cmd": "sqlmap --batch --level=5 --risk=3 --random-agent -u "
+
+    }
 }

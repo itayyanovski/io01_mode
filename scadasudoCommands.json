@@ -157,12 +157,7 @@
 		"desc": "Ethersploit", 
 		"cmd": "sudo /home/io01/Desktop/labio/defcon/EtherSploit-IP-master/ethersploit"
 	    },
-    "mypy":
-    {
-        "type": "run",
-        "desc": "run any script, >python3 <python_script> params...",
-        "cmd": "python3"
-    },
+   
     "ping_target_dev":
     {
         "type": "run",
@@ -176,12 +171,6 @@
         "desc": "verbose ping, run set_target_dev if want to leave arguments empty",
         "cmd": "sudo ping -c 4 -v"
     },
-    "set_target_dev":
-    {
-        "type": "set",
-        "desc": "set_target_dev <ip>",
-        "value": ""
-    }
     "schneider_metasploit_attack":
     {
         "type": "run",

@@ -33,7 +33,7 @@
     {
         "type": "run",
         "desc": "Sniff traffic into PCAP file | params <network_interface> <output_pcap_file> <number_of_packets>", 
-        "cmd": "sudo python3 sniffer.py"
+        "cmd": "sudo python3  ./third_party/sniffer.py"
     },
     
    "s01_01": 

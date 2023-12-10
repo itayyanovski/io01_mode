@@ -52,85 +52,46 @@
         "cmd": "nmap -Pn -sT -p102 --script s7-info"
     },
     
-    "s01_06": 
+    "modbus-scan-na": 
     {
         "type": "run",
-        "desc": "discover.T0846.001: TCP SysInfo Discovery--> tcp_fingerprint <target_ip>", 
-        "cmd": "sudo nmap -O -v"
+        "desc": "Non aggressive nmap <target_ip>", 
+        "cmd": "nmap -Pn -sT -p502 --script modbus-discover"
     },
 
-    "s01_07": 
+    "enip-scan": 
     {
         "type": "run",
         "desc": "discover.T0888.001: OT SysInfo Discovery-enip--> enip_fingerprint <target_ip>", 
         "cmd": "sudo nmap -Pn -sU -p44818 --script enip-info"
     },
     
-    "s01_08":
+    "modbus-scan-ag":
     {
         "type": "run",
-        "desc": "recon.T1595.002:Vulnerability Scanning-->vulnscan <target_ip>",
-        "cmd": "sudo nmap -sV --script nmap-vulners/",
+        "desc": "aggressive nmap <target_ip>",
+        "cmd": "nmap -sT -Pn -p502 --script modbus-discover --script-args modbus-discover.aggressive=true",
         "default": "set_target_dev"
     },
   
-   "s01_09": 
+   "bacnet-scan": 
 	    {
 		"type": "interactive",
-		"desc": "exploit.T0866.001:Exploit Remote Service target-->ml1400_exploit <target_ip>", 
-		"cmd": "sudo ./bin/ethersploit"
+		"desc": "bacnet scan <target_ip>", 
+		"cmd": "nmap -Pn -sU -p47808 --script bacnet-info"
 	    },
-   "s01_10": 
+   "omron-scan-sU": 
 	    {
 		"type": "run",
-		"desc": "impair.T0855.001-->Unauthorized command: Modbus write single coil <tpreconf> OFF", 
-		"cmd": "python3 ./bin/io.py"
+		"desc": "Omrom PLC Devices UDP/TCP <target_ip>", 
+		"cmd": "nmap -Pn -sU -p9600 --script omrom-info"
 	    },
-    
-    
-    
-    "get_local_interface": 
-    {
-        "type": "run",
-        "desc": "Get interfaces", 
-        "cmd": "sudo ifconfig"
-    },
-    
-    "netscan": 
-    {
-        "type": "run",
-        "desc": "Discover IPs in your network <subnet>", 
-        "cmd": "sudo nmap -sP -PR"
-    },
-    
-    "discover_assets2": 
-    {
-        "type": "run",
-        "desc": "Passive traffic fingerprinting <interface>", 
-        "cmd": "sudo p0f -i"
-    },
-    
-    "ot_netscan": 
-    {
-        "type": "run",
-        "desc": "Scan ports <target_device>", 
-        "cmd": "sudo nmap -Pn -sT --max-parallelism 1 -p 80,102,443,502,530,593,789,1089-1091,1911,1962,2222,2404,4000,4840,4843,4911,9600,19999,20000,20547,34962-34964,34980,44818,46823,46824,55000-55003"
-    },
-    
-    "tcp_fingerprint": 
-    {
-        "type": "run",
-        "desc": "TCP/IP fingerprinting <target_device>", 
-        "cmd": "sudo nmap -O -v"
-    },
-
-    "enip_fingerprint": 
-    {
-        "type": "run",
-        "desc": "CIP/enip fingerprinting <target_device>", 
-        "cmd": "sudo nmap -Pn -sU -p44818 --script enip-info"
-    },
- 
+   "omron-scan-sT": 
+	    {
+		"type": "run",
+		"desc": "Omrom PLC Devices UDP/TCP <target_ip>", 
+		"cmd": "nmap -Pn -sT -p9600 --script omrom-info"
+	    },
    "discover_passwords": 
 	    {
 		"type": "run",
@@ -144,20 +105,8 @@
 		"desc": "Modbus write single coil <tpreconf>", 
 		"cmd": "python3 /home/io01/Desktop/labio/Kadabra/IO01_v03/io.py"
 	    },
-    
-   "ethsploit": 
-	    {
-		"type": "run",
-		"desc": "Ethersploit", 
-		"cmd": "sudo /home/io01/Desktop/labio/defcon/EtherSploit-IP-master/ethersploit"
-	    },
-    "mypy":
-    {
-        "type": "run",
-        "desc": "run any script, >python3 <python_script> params...",
-        "cmd": "python3"
-    },
-    "ping_target_dev":
+
+"ping_target_dev":
     {
         "type": "run",
         "desc": "simple ping, run set_target_dev if want to leave arguments empty",
@@ -169,18 +118,5 @@
         "type": "run",
         "desc": "verbose ping, run set_target_dev if want to leave arguments empty",
         "cmd": "sudo ping -c 4 -v"
-    },
-    "set_target_dev":
-    {
-        "type": "set",
-        "desc": "set_target_dev <ip>",
-        "value": ""
-    },
-    "schneider_metasploit_attack":
-    {
-        "type": "run",
-        "desc": "schneider_metasploit_attack <IP>: disables and enables the PLC IOs",
-        "cmd": "/home/io01/Desktop/scadasudo/metasploit_attacks/schneider_io_executor"
     }
-
 }

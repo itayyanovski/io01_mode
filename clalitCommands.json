@@ -15,28 +15,22 @@
         "cmd": "sh ./io01_update.sh"
     },
 	
-    "snort": 
-    {
-        "type": "run",
-        "desc": "Sniff traffic into PCAP file | Params <network_interface> <output_pcap_file> <number_of_packets>", 
-        "cmd": "sudo snort"
-    },
-
-    "kadabra_help": 
+   "kadabra_help": 
     {
         "type": "run",
         "desc": "Show kadabra commands help", 
         "cmd": "cat kadabra_commands_help"
     },
-    
-    "sniffer": 
+	
+    "sniff": 
     {
         "type": "run",
-        "desc": "run scapy", 
-        "cmd": "sudo python3 sniffer.py"
+        "desc": "Sniff traffic into PCAP file | Params <network_interface> <output_pcap_file> <number_of_packets>", 
+        "cmd": "sudo python3  ./third_party/sniffer.py"
     },
-    
-   "s01_01": 
+  
+     
+   "ifconfig": 
     {
         "type": "run",
         "desc": "View Local Network Interfaces--> get_local_interface", 
@@ -44,18 +38,18 @@
     }, 
     
     
-    "s01_02": 
+    "port-scan": 
     {
         "type": "run",
-        "desc": "discover.T1595.001: Remote System Discovery--> netscan <target_ip_block>", 
-        "cmd": 	"sudo nmap -sn"
+        "desc": "discover.T1595.001: Active port scan using Nmap", 
+        "cmd": 	"nmap -Pn -sT --scan-delay 1s --max-parallelism 1  -p 80,102,443,502,530,593,789,1089-1091,1911,1962,2222,2404,4000,4840,4843,4911,9600,19999,20000,20547,34962-34964,34980,44818,46823,46824,55000-55003 "
     },
     
-    "s01_03": 
+    "S7-scan": 
     {
         "type": "run",
-        "desc": "discover.T1423.002: OT_Network Service Scan-->  ot_netscan <target_ip_block>", 
-        "cmd": "sudo nmap -sV -p 80,102,443,502,530,593,789,1089-1091,1911,1962,2222,2404,4000,4840,4843,4911,9600,19999,20000,20547,34962-34964,34980,44818,46823,46824,55000-55003"
+        "desc": "discover.T1423.002: OT_Network Service Scan--> Siemens SIMATIC S7 PLCs <target_ip_block>", 
+        "cmd": "nmap -Pn -sT -p102 --script s7-info"
     },
     
     "s01_06": 

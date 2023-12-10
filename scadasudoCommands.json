@@ -5,7 +5,7 @@
     {
         "type": "run",
         "desc": "Show kadabra commands help", 
-        "cmd": "echo ScadaSudo 1.0.19.0"
+        "cmd": "echo ScadaSudo 1.0.20.0"
     },
 
     "io01_update": 

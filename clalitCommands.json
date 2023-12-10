@@ -175,7 +175,7 @@
         "type": "set",
         "desc": "set_target_dev <ip>",
         "value": ""
-    }
+    },
     "schneider_metasploit_attack":
     {
         "type": "run",
